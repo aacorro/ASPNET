@@ -66,5 +66,15 @@ namespace Testing.Controllers
         }
 
 
+        #region "API Calls"
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var products = repo.GetAllProducts();
+            return Json(new { data = products });
+        }
+
+        #endregion
+
     }
 }

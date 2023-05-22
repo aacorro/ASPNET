@@ -1,23 +1,27 @@
 ﻿@model IEnumerable<Product>
 
-<h2>Products</h2>
+<h2 class="text-center display-5" >Products</h2>
 
-<div style="display: block">
-    <a href="/Product/InsertProduct/">Create a New Product</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end my-2">
+    <a href="/Product/InsertProduct/" class="btn btn-outline-primary justify-content-md-end" aria-current="page"><i class="bi bi-plus-circle"></i> Create New Product</a>
 </div>
 
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category ID</th>
-        <th>On Sale</th>
-        <th>Stock Level</th>
-    </tr>
+<table id="tblData" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>On Sale</th>
+            <th>Stock Level</th>
+            <th></th>
+        </tr>
+    </thead>
 
-    @foreach (var product in Model)
+@*    replaced with datatables 
+*@   @* @foreach (var product in Model)
     {
         <tr>
             <td>
@@ -31,6 +35,9 @@
             <td>@product.StockLevel</td>
         </tr>
 
-    }
+    }*@
 </table>
 
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}
